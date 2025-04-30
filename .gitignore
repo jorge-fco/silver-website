@@ -1,3 +1,22 @@
+# = MAC FILES
+Icon
+.DS_Store
+
+# = EDITORS TEXT
+prepros.config
+prepros.cfg
+prepros-6.config
+prepros.cfg
+config.codekit3
+
+#= TEMPLATES
+*.pug
+contact.html
+privacy.html
+404.html
+
+#= SCSS
+*.scss
 .sass-cache/
 *.css.map
 *.sass.map
