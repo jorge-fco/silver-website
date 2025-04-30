@@ -11,6 +11,9 @@ config.codekit3
 
 #= TEMPLATES
 *.pug
+cover.html
+gallery.html
+location.html
 contact.html
 privacy.html
 404.html

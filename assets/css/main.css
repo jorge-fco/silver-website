@@ -556,17 +556,83 @@ figure {
 }
 
 .landing__information {
+  margin: 0 auto;
   position: relative;
 }
+@media (min-width: 1080px) {
+  .landing__information {
+    width: 75%;
+  }
+}
+@media (min-width: 1440px) {
+  .landing__information {
+    width: 66.66667%;
+  }
+}
+.landing__information data {
+  display: block;
+  position: relative;
+  text-align: center;
+  margin-bottom: 2em;
+}
+.landing__information data svg {
+  width: 184px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+}
+@media (min-width: 1080px) {
+  .landing__information data svg {
+    width: 204px;
+  }
+}
+@media (min-width: 1440px) {
+  .landing__information data svg {
+    width: 224px;
+  }
+}
 .landing__information h1 {
+  color: #8A0101;
+  font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
   font-size: 2.2rem;
-  margin-bottom: 1em;
+  text-transform: uppercase;
+  margin-bottom: 0.8em;
+}
+.landing__information h1 span {
+  font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  display: block;
+  position: relative;
 }
 .landing__information h2 {
-  font-size: 1.8rem;
+  color: #5B0202;
+  font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1.6rem;
   margin-bottom: 1.4em;
 }
+.landing__information h2 span {
+  font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  display: block;
+  position: relative;
+}
 .landing__information p {
+  color: #200E00;
+  font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.2rem;
   position: relative;
   margin-bottom: 4em;
 }
