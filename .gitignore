@@ -24,3 +24,7 @@ privacy.html
 *.css.map
 *.sass.map
 *.scss.map
+
+#= ASSETS
+assets/images/*
+
