@@ -238,6 +238,20 @@
 			//.addIndicators({name: "1 (duration: 0)"})
 			.addTo(controller);
 
+			// Marquee
+			var scene = new ScrollMagic.Scene({
+				triggerElement: ".home__location__information p",
+				duration: 100
+			})
+			.setTween(".home__location__marquee", 6,{
+				delay: 0,
+				autoAlpha: 1,
+				ease: Expo.easeInOut
+			})
+			.addIndicators({name: "1 (duration: 0)"})
+			.addTo(controller);
+
+
 			// Image
 			var scene = new ScrollMagic.Scene({
 				triggerElement: ".home__location__information",

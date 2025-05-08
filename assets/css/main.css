@@ -2039,6 +2039,8 @@ figure {
   display: block;
   position: relative;
   margin-top: 4em;
+  opacity: 0;
+  visibility: hidden;
 }
 .home__location__marquee p {
   color: var(--color-body);
