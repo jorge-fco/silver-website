@@ -248,7 +248,7 @@
 				autoAlpha: 1,
 				ease: Expo.easeInOut
 			})
-			.addIndicators({name: "1 (duration: 0)"})
+			//.addIndicators({name: "1 (duration: 0)"})
 			.addTo(controller);
 
 

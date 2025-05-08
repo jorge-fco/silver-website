@@ -1654,10 +1654,6 @@ figure {
   }
 }
 
-.home__slider__layout {
-  overflow-x: hidden;
-}
-
 .home__slider__container {
   width: 100%;
   z-index: 15;

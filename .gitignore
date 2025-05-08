@@ -26,5 +26,4 @@ privacy.html
 *.scss.map
 
 #= ASSETS
-assets/images/*
 
