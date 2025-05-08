@@ -27,9 +27,12 @@
 
 			// ❓Check
 			if($(Pages[0]).length){
+				APP.Cover();
 				APP.Slider();
 				APP.Navigation();
 				APP.Gallery();
+				APP.Location();
+				APP.Contact();
 				APP.Footer();
 			}
 		},
@@ -61,11 +64,21 @@
 			});
 		},
 		Navigation: function(){
+			// Show options
+			gsap.to($('.header__navigation'), 1,{
+				delay: 1,
+				y: 0,
+				autoAlpha: 1,
+				ease: "circ.inOut"
+			});
+
+			// Click Nav Options
 			$Navigation.click(function(event) {
 				event.preventDefault();
 
 				// Get
 				var _id = $(this).data('id');
+				var _section = $(_id).offset().top;
 
 				// Clean
 				$Navigation.removeClass('is--active');
@@ -75,11 +88,62 @@
 					duration: 1,
 					autoKill: true,
 					ease: "power2.inOut",
-					scrollTo: _id
+					scrollTo: _section
 				});
 
 				// Active option
 				$(this).addClass('is--active');
+			});
+
+			// Init
+			var controller = new ScrollMagic.Controller();
+
+			// Nav change color
+			var scene = new ScrollMagic.Scene({
+				triggerElement: ".home__gallery__title",
+			})
+			.setClassToggle('.js-header-navigation ul li a', 'is--scroll')
+			//.addIndicators({name: "1 (duration: 0)"})
+			.addTo(controller);
+		},
+		Cover: function(){
+			gsap.to($('.home__cover__image img'), 1,{
+				delay: 1,
+				scale: 1,
+				ease: "circ.inOut"
+			});
+
+			gsap.to($('.home__cover__text data'), 0.5,{
+				delay: 0.25,
+				autoAlpha: 1,
+				ease: "expo.inOut"
+			});
+
+			gsap.to($('.home__cover__text p'), 0.5,{
+				delay: 0.5,
+				y: 0,
+				autoAlpha: 1,
+				ease: "expo.inOut"
+			});
+
+			gsap.to($('.home__cover__text a'), 0.5,{
+				delay: 0.75,
+				y: 0,
+				autoAlpha: 1,
+				ease: "expo.inOut"
+			});
+
+			gsap.to($('.whatsapp__component'), 0.5,{
+				delay: 1,
+				autoAlpha: 1,
+				ease: "expo.inOut"
+			});
+
+			gsap.to($('.whatsapp__component a'), 0.5,{
+				delay: 1.25,
+				scale: 1,
+				autoAlpha: 1,
+				ease: "expo.inOut"
 			});
 		},
 		Gallery: function(){
@@ -123,6 +187,82 @@
 				delay: 0,
 				y: 0,
 				autoAlpha: 1,
+				ease: Expo.easeInOut
+			})
+			//.addIndicators({name: "1 (duration: 0)"})
+			.addTo(controller);
+		},
+		Location: function(){
+			// Init
+			var controller = new ScrollMagic.Controller();
+
+			// Title
+			var scene = new ScrollMagic.Scene({
+				triggerElement: ".home__location",
+				duration: 50
+			})
+			.setTween(".home__location__title p", 6,{
+				delay: 0,
+				y: 0,
+				autoAlpha: 1,
+				ease: Expo.easeInOut
+			})
+			//.addIndicators({name: "1 (duration: 0)"})
+			.addTo(controller);
+
+			// SubTitle
+			var scene = new ScrollMagic.Scene({
+				triggerElement: ".home__location__title",
+				duration: 100
+			})
+			.setTween(".home__location__information h3", 6,{
+				delay: 0,
+				y: 0,
+				autoAlpha: 1,
+				ease: Expo.easeInOut
+			})
+			//.addIndicators({name: "1 (duration: 0)"})
+			.addTo(controller);
+
+			// Text
+			var scene = new ScrollMagic.Scene({
+				triggerElement: ".home__location__information",
+				duration: 120
+			})
+			.setTween(".home__location__information p", 6,{
+				delay: 0,
+				y: 0,
+				autoAlpha: 1,
+				ease: Expo.easeInOut
+			})
+			//.addIndicators({name: "1 (duration: 0)"})
+			.addTo(controller);
+
+			// Image
+			var scene = new ScrollMagic.Scene({
+				triggerElement: ".home__location__information",
+				duration: 120
+			})
+			.setTween(".home__location__google svg", 6,{
+				delay: 0,
+				scale: 1,
+				ease: Expo.easeInOut
+			})
+			//.addIndicators({name: "1 (duration: 0)"})
+			.addTo(controller);
+		},
+		Contact: function(){
+			// Init
+			var controller = new ScrollMagic.Controller();
+
+			// Image
+			var scene = new ScrollMagic.Scene({
+				triggerElement: ".home__location__marquee",
+				duration: 200
+			})
+			.setTween(".home__contact__thumb img", 6,{
+				delay: 0,
+				scale: 1,
 				ease: Expo.easeInOut
 			})
 			//.addIndicators({name: "1 (duration: 0)"})

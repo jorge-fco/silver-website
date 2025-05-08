@@ -755,12 +755,16 @@ svg {
   position: absolute;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+  opacity: 0;
+  visibility: hidden;
 }
 .whatsapp__component a {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
   position: relative;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
   -webkit-transition: all 0.5s var(--transition-link);
   transition: all 0.5s var(--transition-link);
 }
@@ -824,6 +828,7 @@ figure {
   left: 0px;
   z-index: 100;
   position: fixed;
+  overflow: hidden;
 }
 
 .header__grid {
@@ -851,6 +856,10 @@ figure {
 
 .header__navigation {
   position: relative;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: matrix(1, 0, 0, 1, 0, -120);
+          transform: matrix(1, 0, 0, 1, 0, -120);
 }
 .header__navigation nav {
   position: relative;
@@ -885,6 +894,16 @@ figure {
 .header__navigation nav ul li a.is--active:before {
   width: 100%;
   background-color: var(--color-primary);
+  -webkit-transition: all 0.5s var(--transition-link);
+  transition: all 0.5s var(--transition-link);
+}
+.header__navigation nav ul li a.is--scroll:before {
+  background-color: var(--color-body);
+  -webkit-transition: all 0.5s var(--transition-link);
+  transition: all 0.5s var(--transition-link);
+}
+.header__navigation nav ul li a.is--scroll span {
+  color: var(--color-body);
   -webkit-transition: all 0.5s var(--transition-link);
   transition: all 0.5s var(--transition-link);
 }
@@ -1467,6 +1486,8 @@ figure {
   margin-left: 0px;
   margin-right: auto;
   margin-bottom: 2.4em;
+  opacity: 0;
+  visibility: hidden;
 }
 .home__cover__text data svg {
   width: 224px;
@@ -1484,6 +1505,10 @@ figure {
   margin-right: auto;
   margin-bottom: 2em;
   width: 50%;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: matrix(1, 0, 0, 1, 0, 30);
+          transform: matrix(1, 0, 0, 1, 0, 30);
 }
 @media (min-width: 1600px) {
   .home__cover__text p {
@@ -1494,6 +1519,10 @@ figure {
 .home__cover__text a[role=button] {
   margin-left: 1em;
   margin-right: auto;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: matrix(1, 0, 0, 1, 0, 30);
+          transform: matrix(1, 0, 0, 1, 0, 30);
 }
 
 .home__cover__image {
@@ -1507,6 +1536,11 @@ figure {
   overflow: hidden;
   z-index: 10;
 }
+.home__cover__image img {
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
+}
+
 .home__cover__difference {
   width: 50%;
   z-index: 15;
@@ -1911,6 +1945,12 @@ figure {
   font-size: 2.6rem;
   letter-spacing: 10px;
   text-transform: uppercase;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: matrix(1, 0, 0, 1, 0, 30);
+          transform: matrix(1, 0, 0, 1, 0, 30);
+  -webkit-transition: all 0.5s var(--transition-link);
+  transition: all 0.5s var(--transition-link);
 }
 
 .home__location__grid {
@@ -1937,6 +1977,12 @@ figure {
 }
 .home__location__information h3 {
   margin-bottom: 1em;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: matrix(1, 0, 0, 1, 0, 30);
+          transform: matrix(1, 0, 0, 1, 0, 30);
+  -webkit-transition: all 0.5s var(--transition-link);
+  transition: all 0.5s var(--transition-link);
 }
 .home__location__information h3 span {
   font-size: 1.8rem;
@@ -1946,6 +1992,12 @@ figure {
   font-size: 1.1rem;
   line-height: 1.5;
   text-align: justify;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: matrix(1, 0, 0, 1, 0, 30);
+          transform: matrix(1, 0, 0, 1, 0, 30);
+  -webkit-transition: all 0.5s var(--transition-link);
+  transition: all 0.5s var(--transition-link);
 }
 
 .home__location__google {
@@ -1974,6 +2026,10 @@ figure {
   margin: 0px;
   padding: 0px;
   position: relative;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: all 0.5s var(--transition-link);
+  transition: all 0.5s var(--transition-link);
 }
 
 .home__location__marquee {
@@ -2065,6 +2121,13 @@ figure {
   overflow: hidden;
   background-color: var(--color-accent);
 }
+.home__contact__thumb img {
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
+  -webkit-transition: all 0.5s var(--transition-link);
+  transition: all 0.5s var(--transition-link);
+}
+
 .home__contact__form {
   width: calc(100% - 4em);
   padding-left: 2em;
