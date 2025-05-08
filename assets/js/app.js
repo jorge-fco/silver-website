@@ -7,6 +7,11 @@
 */
 (function($){
 
+	var $Navigation = $('.js-header-navigation ul li a');
+	var $Slider = $('.js-home-slider-component');
+	var $SliderPrev = $('.js-home-slider-prev');
+	var $SliderNext = $('.js-home-slider-next');
+
 	// Pages
 	Pages = [
 		'.js-home',
@@ -22,17 +27,15 @@
 			// ❓Check
 			if($(Pages[0]).length){
 				APP.Slider();
-				APP.GoogleMaps();
+				APP.Navigation();
 			}
 		},
 		Slider: function(){
-			var $Slider = $('.js-home-slider-component');
-			var $SliderPrev = $('.js-home-slider-prev');
-			var $SliderNext = $('.js-home-slider-next');
-
 			// ⚙️ Config
 			$Slider.flickity({
 				draggable: true,
+				autoPlay: 2000,
+				pauseAutoPlayOnHover: true,
 				pageDots: false,
 				prevNextButtons: false,
 				wrapAround: true,
@@ -52,6 +55,14 @@
 			// Next [ > ]
 			$SliderNext.on( 'click', function() {
 				$Slider.flickity('next');
+			});
+		},
+		Navigation: function(){
+			$Navigation.click(function(event) {
+				event.preventDefault();
+				var _id = $(this).data('id');
+
+				alert(_id);
 			});
 		},
 		GoogleMaps: function(){
