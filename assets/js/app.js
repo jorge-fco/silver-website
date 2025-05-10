@@ -7,7 +7,7 @@
 	©2025
 */
 (function($){
-
+	// Vars
 	var $Navigation = $('.js-header-navigation ul li a');
 	var $Slider = $('.js-home-slider-component');
 	var $SliderPrev = $('.js-home-slider-prev');
@@ -28,6 +28,7 @@
 			// ❓Check
 			if($(Pages[0]).length){
 				APP.Cover();
+				APP.Parallax();
 				APP.Slider();
 				APP.Navigation();
 				APP.Gallery();
@@ -107,44 +108,89 @@
 			.addTo(controller);
 		},
 		Cover: function(){
-			gsap.to($('.home__cover__image img'), 1,{
-				delay: 1,
-				scale: 1,
+			gsap.to($('.home__cover__background'), 1,{
+				delay: 0.5,
+				autoAlpha: 1,
+				ease: "circ.inOut"
+			});
+
+			gsap.to($('.home__cover__canva'), 1,{
+				delay: 0.25,
+				autoAlpha: 1,
 				ease: "circ.inOut"
 			});
 
 			gsap.to($('.home__cover__text data'), 0.5,{
-				delay: 0.25,
+				delay: 0.5,
 				autoAlpha: 1,
 				ease: "expo.inOut"
 			});
 
 			gsap.to($('.home__cover__text p'), 0.5,{
-				delay: 0.5,
-				y: 0,
-				autoAlpha: 1,
-				ease: "expo.inOut"
-			});
-
-			gsap.to($('.home__cover__text a'), 0.5,{
 				delay: 0.75,
 				y: 0,
 				autoAlpha: 1,
 				ease: "expo.inOut"
 			});
 
-			gsap.to($('.whatsapp__component'), 0.5,{
+			gsap.to($('.home__cover__text a'), 0.5,{
 				delay: 1,
+				y: 0,
+				autoAlpha: 1,
+				ease: "expo.inOut"
+			});
+
+			gsap.to($('.whatsapp__component'), 0.5,{
+				delay: 1.25,
 				autoAlpha: 1,
 				ease: "expo.inOut"
 			});
 
 			gsap.to($('.whatsapp__component a'), 0.5,{
-				delay: 1.25,
+				delay: 1.5,
 				scale: 1,
 				autoAlpha: 1,
 				ease: "expo.inOut"
 			});
+		},
+		Parallax: function(){
+			// Init
+			var _duration = 680;
+			var _offset = 10;
+			var _y = -40;
+			var controller = new ScrollMagic.Controller();
+
+			// Canva
+			var scene = new ScrollMagic.Scene({
+				triggerElement: ".home__cover__text",
+				duration: _duration,
+				offset: _offset,
+				triggerHook: 0,
+			})
+			.setTween(".home__cover__canva img", 1,{
+				delay: 0,
+				scale: 1.99,
+				yPercent: _y,
+				ease: Linear.easeNone
+			})
+			//.addIndicators({name: "1 (duration: 0)"})
+			.addTo(controller);
+
+			// Background
+			var scene = new ScrollMagic.Scene({
+				triggerElement: ".home__cover__text",
+				duration: _duration,
+				offset: _offset,
+				triggerHook: 0,
+			})
+			.setTween(".home__cover__background img", 1,{
+				delay: 0,
+				scale: 1.2,
+				//yPercent: _y,
+				ease: Linear.easeNone
+			})
+			//.addIndicators({name: "1 (duration: 0)"})
+			.addTo(controller);
 		},
 		Gallery: function(){
 			// Init
