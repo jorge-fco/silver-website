@@ -8,7 +8,12 @@
 */
 (function($){
 	// Vars
-	var $Navigation = $('.js-header-navigation ul li a');
+	var $Navigation = $('.js-header-navigation ul li a[role="link"]');
+	var _time = 0.1;
+	var $Menu = $('.js-menu');
+	var $MenuNavigation = $('.js-menu-navigation');
+	var $MenuOpen = $('.js-menu-open');
+	var $MenuClose = $('.js-menu-close');
 	var $Slider = $('.js-home-slider-component');
 	var $SliderPrev = $('.js-home-slider-prev');
 	var $SliderNext = $('.js-home-slider-next');
@@ -35,6 +40,8 @@
 				APP.Location();
 				APP.Contact();
 				APP.Footer();
+				APP.Menu();
+				APP.Mobile();
 			}
 		},
 		Slider: function(){
@@ -42,6 +49,7 @@
 			$Slider.flickity({
 				draggable: true,
 				autoPlay: 2000,
+				autoPlay: false,
 				pauseAutoPlayOnHover: true,
 				pageDots: false,
 				prevNextButtons: false,
@@ -289,7 +297,7 @@
 				triggerElement: ".home__location__information p",
 				duration: 100
 			})
-			.setTween(".home__location__marquee", 6,{
+			.setTween(".home__location__marquee.is--center", 6,{
 				delay: 0,
 				autoAlpha: 1,
 				ease: Expo.easeInOut
@@ -387,7 +395,125 @@
 			})
 			//.addIndicators({name: "1 (duration: 0)"})
 			.addTo(controller);
-		}
+		},
+		Menu: function(){
+			// Click Open
+			$MenuOpen.click(function(event){
+				event.preventDefault();
+				Open();
+			});
+
+			// Click Close
+			$MenuClose.click(function(event){
+				event.preventDefault();
+				Close();
+			});
+
+			// Click Nav Options
+			$MenuNavigation.find('nav ul li a').click(function(event) {
+				event.preventDefault();
+
+				// Get
+				var _id = $(this).data('id');
+				var _section = $(_id).offset().top;
+
+				// Clean
+				$MenuNavigation.find('nav ul li a').removeClass('is--active');
+
+				// Scroll section
+				gsap.to(window, 1,{
+					duration: 1,
+					autoKill: true,
+					ease: "power2.inOut",
+					scrollTo: _section,
+					onComplete: function(){
+						// Function close
+						Close();
+					}
+				});
+
+				// Active option
+				$(this).addClass('is--active');
+			});
+
+			function Open(){
+				gsap.to($Menu, 0.5,{
+					delay: 0,
+					width: '100%',
+					autoAlpha: 1,
+					ease: "power2.inOut",
+				});
+
+				// Each => Options
+				$MenuNavigation.find('nav ul li a span').each(function(index){
+					gsap.to($(this), 0.5,{
+						delay: index * _time,
+						y: 0,
+						rotation: 0,
+						autoAlpha: 1,
+						ease: "power2.inOut",
+					});
+				});
+			}
+
+			function Close(){
+				// Each =>
+				$MenuNavigation.find('nav ul li a span').each(function(index){
+					gsap.to($(this), 0.5,{
+						delay: index * _time,
+						y: 25,
+						rotation: 8,
+						autoAlpha: 0,
+						ease: "power2.inOut",
+					});
+				});
+
+				gsap.to($Menu, 0.5,{
+					delay: 1,
+					width: '0%',
+					autoAlpha: 0,
+					ease: "power2.inOut",
+				});
+			}
+		},
+		Mobile: function(){
+			// Click
+			$('.home__cover__text a[role="link"]').click(function(event) {
+				event.preventDefault();
+				// Get
+				var _id = $(this).data('id');
+				var _Open = $(this).data('open');
+
+				// Check
+				if (_Open) {
+					// Show
+					gsap.to($(_id), 0.5,{
+						delay: 0,
+						height: 'auto',
+						ease: "power2.inOut",
+					});
+
+					// Text
+					$(this).find('span').text('Ver menos');
+
+					// Change
+					$(this).data('open', false);
+				} else {
+					// Hidden
+					gsap.to($(_id), 0.5,{
+						delay: 0,
+						height: '52px',
+						ease: "power2.inOut",
+					});
+
+					// Text
+					$(this).find('span').text('Ver más');
+
+					// Change
+					$(this).data('open', true);
+				}
+			});
+		},
 	};
 
 	window.theme = APP;
