@@ -111,7 +111,7 @@
 			var scene = new ScrollMagic.Scene({
 				triggerElement: ".home__gallery__title",
 			})
-			.setClassToggle('.js-header-navigation ul li a', 'is--scroll')
+			.setClassToggle('.js-header', 'is--scroll')
 			//.addIndicators({name: "1 (duration: 0)"})
 			.addTo(controller);
 		},

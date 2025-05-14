@@ -888,6 +888,8 @@ figure {
   z-index: 100;
   position: fixed;
   overflow: hidden;
+  -webkit-transition: all 0.5s var(--transition-link);
+  transition: all 0.5s var(--transition-link);
   background: -webkit-gradient(linear, left top, right top, from(rgb(90, 18, 15)), color-stop(50%, rgb(29, 18, 11)), to(rgb(29, 18, 11)));
   background: linear-gradient(90deg, rgb(90, 18, 15) 0%, rgb(29, 18, 11) 50%, rgb(29, 18, 11) 100%);
 }
@@ -897,6 +899,19 @@ figure {
     background: -webkit-gradient(linear, left top, right top, from(rgba(90, 18, 15, 0)), color-stop(50%, rgba(29, 18, 11, 0)), to(rgba(29, 18, 11, 0)));
     background: linear-gradient(90deg, rgba(90, 18, 15, 0) 0%, rgba(29, 18, 11, 0) 50%, rgba(29, 18, 11, 0) 100%);
   }
+}
+@media (min-width: 1080px) {
+  .header.is--scroll {
+    padding: 0.8em 0em;
+    background-color: white !important;
+    -webkit-transition: all 0.5s var(--transition-link);
+    transition: all 0.5s var(--transition-link);
+  }
+}
+.header.is--scroll .header__logo a svg {
+  width: 54px;
+  -webkit-transition: all 0.5s var(--transition-link);
+  transition: all 0.5s var(--transition-link);
 }
 
 .header__grid {
@@ -920,6 +935,8 @@ figure {
 }
 .header__logo a svg {
   width: 44px;
+  -webkit-transition: all 0.5s var(--transition-link);
+  transition: all 0.5s var(--transition-link);
 }
 @media (min-width: 768px) {
   .header__logo a svg {
