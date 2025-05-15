@@ -463,6 +463,8 @@ https://flickity.metafizzy.co
 body {
   margin: 0px;
   padding: 0px;
+  position: relative;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -1795,32 +1797,32 @@ figure {
   font-family: var(--font-title);
   font-weight: 400;
   font-style: normal;
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   letter-spacing: 2px;
 }
 @media (min-width: 768px) {
   .home__title, .home__location__information h3, .home__gallery__title h3 {
-    font-size: 2.6rem;
+    font-size: 2.4rem;
   }
 }
 @media (min-width: 1080px) {
   .home__title, .home__location__information h3, .home__gallery__title h3 {
-    font-size: 3rem;
+    font-size: 2.6rem;
   }
 }
 @media (min-width: 1440px) {
   .home__title, .home__location__information h3, .home__gallery__title h3 {
-    font-size: 3.2rem;
+    font-size: 2.8rem;
   }
 }
 @media (min-width: 1600px) {
   .home__title, .home__location__information h3, .home__gallery__title h3 {
-    font-size: 3.4rem;
+    font-size: 3rem;
   }
 }
 @media (min-width: 1920px) {
   .home__title, .home__location__information h3, .home__gallery__title h3 {
-    font-size: 3.6rem;
+    font-size: 3.2rem;
   }
 }
 
@@ -1864,15 +1866,15 @@ figure {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 90vh;
-  height: 90svh;
+  height: 100vh;
+  height: 100svh;
   background: -webkit-gradient(linear, left top, right top, from(rgb(90, 18, 15)), color-stop(50%, rgb(29, 18, 11)), to(rgb(29, 18, 11)));
   background: linear-gradient(90deg, rgb(90, 18, 15) 0%, rgb(29, 18, 11) 50%, rgb(29, 18, 11) 100%);
 }
 @media (min-width: 768px) {
   .home__cover {
-    height: 95vh;
-    height: 95svh;
+    height: 100vh;
+    height: 100svh;
   }
 }
 @media (min-width: 1080px) {
@@ -2906,7 +2908,7 @@ figure {
 .home__location__information a[role=link] {
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 2em;
+  margin-top: 2em;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;

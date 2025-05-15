@@ -513,6 +513,43 @@
 					$(this).data('open', true);
 				}
 			});
+
+			// Click
+			$('.home__location__information a[role="link"]').click(function(event) {
+				event.preventDefault();
+				// Get
+				var _id = $(this).data('id');
+				var _Open = $(this).data('open');
+
+				// Check
+				if (_Open) {
+					// Show
+					gsap.to($(_id), 0.5,{
+						delay: 0,
+						height: 'auto',
+						ease: "power2.inOut",
+					});
+
+					// Text
+					$(this).find('span').text('Ver menos');
+
+					// Change
+					$(this).data('open', false);
+				} else {
+					// Hidden
+					gsap.to($(_id), 0.5,{
+						delay: 0,
+						height: '52px',
+						ease: "power2.inOut",
+					});
+
+					// Text
+					$(this).find('span').text('Ver más');
+
+					// Change
+					$(this).data('open', true);
+				}
+			});
 		},
 	};
 
