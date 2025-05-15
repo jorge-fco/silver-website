@@ -9,7 +9,6 @@
 (function($){
 	// Vars
 	var $Navigation = $('.js-header-navigation ul li a[role="link"]');
-	var _time = 0.1;
 	var $Menu = $('.js-menu');
 	var $MenuNavigation = $('.js-menu-navigation');
 	var $MenuOpen = $('.js-menu-open');
@@ -17,6 +16,10 @@
 	var $Slider = $('.js-home-slider-component');
 	var $SliderPrev = $('.js-home-slider-prev');
 	var $SliderNext = $('.js-home-slider-next');
+	var _time = 0.1;
+	var _duration = 680;
+	var _offset = 10;
+	var _y = -20;
 
 	// Pages
 	Pages = [
@@ -163,9 +166,6 @@
 		},
 		Parallax: function(){
 			// Init
-			var _duration = 680;
-			var _offset = 10;
-			var _y = -40;
 			var controller = new ScrollMagic.Controller();
 
 			// Canva
@@ -177,7 +177,7 @@
 			})
 			.setTween(".home__cover__canva img", 1,{
 				delay: 0,
-				scale: 1.99,
+				//scale: 1,
 				yPercent: _y,
 				ease: Linear.easeNone
 			})
@@ -194,7 +194,7 @@
 			.setTween(".home__cover__background img", 1,{
 				delay: 0,
 				scale: 1.2,
-				//yPercent: _y,
+				yPercent: _y,
 				ease: Linear.easeNone
 			})
 			//.addIndicators({name: "1 (duration: 0)"})

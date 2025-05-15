@@ -799,7 +799,22 @@ svg {
 @media (min-width: 1080px) {
   .whatsapp__component {
     right: 4em;
-    top: calc(50% - 4em);
+    top: calc(50% - 8em);
+  }
+}
+@media (min-width: 1440px) {
+  .whatsapp__component {
+    top: calc(50% - 10em);
+  }
+}
+@media (min-width: 1600px) {
+  .whatsapp__component {
+    top: calc(50% - 12em);
+  }
+}
+@media (min-width: 1920px) {
+  .whatsapp__component {
+    top: calc(50% - 14em);
   }
 }
 .whatsapp__component a {
@@ -1944,7 +1959,7 @@ figure {
   visibility: hidden;
   -webkit-transform: matrix(1, 0, 0, 1, 0, 30);
           transform: matrix(1, 0, 0, 1, 0, 30);
-  width: 83.33334%;
+  width: 91.66667%;
   height: 52px;
   overflow: hidden;
 }
@@ -2065,19 +2080,26 @@ figure {
 }
 .home__cover__canva img {
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
   margin: 0px;
   padding: 0px;
-  left: 36%;
-  bottom: 4em;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+  left: 0%;
   position: absolute;
-  -webkit-transform: scale(2);
-          transform: scale(2);
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  background-color: transparent;
+  bottom: -2em;
+}
+@media (min-width: 768px) {
+  .home__cover__canva img {
+    bottom: -4em;
+  }
 }
 @media (min-width: 1080px) {
   .home__cover__canva img {
-    bottom: -10em;
+    bottom: -6em;
   }
 }
 
@@ -2597,6 +2619,11 @@ figure {
   position: relative;
   background: -webkit-gradient(linear, left top, right top, from(rgb(90, 18, 15)), color-stop(50%, rgb(29, 18, 11)), to(rgb(29, 18, 11)));
   background: linear-gradient(90deg, rgb(90, 18, 15) 0%, rgb(29, 18, 11) 50%, rgb(29, 18, 11) 100%);
+}
+@media (min-width: 1080px) {
+  .home__location {
+    padding-top: 8em;
+  }
 }
 
 .home__location__svg {
