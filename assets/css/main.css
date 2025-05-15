@@ -924,9 +924,19 @@ figure {
   }
 }
 .header.is--scroll .header__logo a svg {
-  width: 54px;
+  width: 34px;
   -webkit-transition: all 0.5s var(--transition-link);
   transition: all 0.5s var(--transition-link);
+}
+@media (min-width: 768px) {
+  .header.is--scroll .header__logo a svg {
+    width: 44px;
+  }
+}
+@media (min-width: 1080px) {
+  .header.is--scroll .header__logo a svg {
+    width: 54px;
+  }
 }
 
 .header__grid {
@@ -1854,15 +1864,15 @@ figure {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 80vh;
-  height: 80svh;
+  height: 90vh;
+  height: 90svh;
   background: -webkit-gradient(linear, left top, right top, from(rgb(90, 18, 15)), color-stop(50%, rgb(29, 18, 11)), to(rgb(29, 18, 11)));
   background: linear-gradient(90deg, rgb(90, 18, 15) 0%, rgb(29, 18, 11) 50%, rgb(29, 18, 11) 100%);
 }
 @media (min-width: 768px) {
   .home__cover {
-    height: 90vh;
-    height: 90svh;
+    height: 95vh;
+    height: 95svh;
   }
 }
 @media (min-width: 1080px) {
@@ -2837,7 +2847,7 @@ figure {
   margin: 0 auto;
   position: relative;
   text-align: center;
-  width: calc(100% - 2em);
+  width: calc(100% - 0em);
   margin-top: 2em;
   padding: 0em 2em;
 }
